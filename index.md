@@ -293,17 +293,17 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itemnotes_nonpublic
 
 
-- items.dateaccessioned
-- items.datelastborrowed
-- items.datelastseen
-- items.timestamp
+- dateaccessioned
+- datelastborrowed
+- datelastseen
+- timestamp
 
 
-- items.onloan
-- items.notforloan
-- items.damaged
-- items.damaged_on
-- items.itemlost
-- items.itemlost_on
-- items.withdrawn
-- items.withdrawn_on
+- onloan
+- notforloan
+- damaged
+- damaged_on
+- itemlost
+- itemlost_on
+- withdrawn
+- withdrawn_on
