@@ -3,6 +3,8 @@
 
 <br /><br />
 
+## Laziness - the problem this SQL helps to solve
+
 The library system I work for has 51 libraries spread out over 6797 square miles.  Many of these 51 libraries are very small (most serving communities of less than 5000 people, several serving communities of less than 750 people) and only have part time library staff.  The state of Kansas supports a state wide courier system that serves all of these libraries as well as 300 other libraries throughout the state.  One of my jobs is to answer questions along the lines of "I just checked in a book and something weird is happening," or "A patron wants to pay a fine on this book, but I can't find the barcode number in the system," or "I got a book from the courier today and I can't figure out why it was shipped to me," or "Bob returned a book today but Koha says it was checked out to Jim and now it's on hold for Bob.  What happened?"
 
 I've got lots of reports that can answer a lot of these kinds of questions, but one of the problems with running reports is keeping track of where they all are.  I have reports for request history, transfer history, circulation history, modification history, etc. etc. etc.
@@ -267,4 +269,37 @@ This report has it all:
 - If/then statements
 
 
-Here is how I built it.
+## Here's how I built it
+
+
+### Step 1
+
+Like with any query on items, I started with a list of the fields I wanted to pull from items.  In this case I know I needed
+
+- homebranch
+- holdingbranch
+- location
+- itype
+- ccode
+- itemcallnumber
+- barcode
+
+- issues
+- renewals
+
+- itemnotes
+- itemnotes_nonpublic
+
+- items.dateaccessioned
+- items.datelastborrowed
+- items.datelastseen
+- items.timestamp
+
+- items.onloan
+- items.notforloan
+- items.damaged
+- items.damaged_on
+- items.itemlost
+- items.itemlost_on
+- items.withdrawn
+- items.withdrawn_on
