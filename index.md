@@ -7,15 +7,15 @@ The library system I work for has 51 libraries spread out over 6797 square miles
 
 I've got lots of reports that can answer a lot of these kinds of questions, but one of the problems with running reports is keeping track of where they all are.  I have reports for request history, transfer history, circulation history, modification history, etc. etc. etc.  I often have to send e-mails back and forth from library to library asking questions about items and I always try to include the following information in any e-mail I send concerning an item:
 
-Item homebranch:
-Current branch:
-Shelving location:
-Item type:
-Collection code:
-Call#:
-Author:
-Title:
-Item barcode:
+- Item homebranch:
+- Current branch:
+- Shelving location:
+- Item type:
+- Collection code:
+- Call#:
+- Author:
+- Title:
+- Item barcode:
 
 and I like to put that information in that order because we classify all of our items in that order - home, location, type, code, call, author, title, bc.  If I'm asking a staff member at one of our libraries to look for something on the shelf, everything they need to do that is right there in that list.
 
