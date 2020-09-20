@@ -269,7 +269,7 @@ This report has it all:
 - If/then statements
 
 
-## Here's how I built it
+## So, here's how I spent 60 hours writing a report to save me half a minute a day
 
 
 ### Step 1
@@ -284,16 +284,20 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itemcallnumber
 - barcode
 
+
 - issues
 - renewals
 
+
 - itemnotes
 - itemnotes_nonpublic
+
 
 - items.dateaccessioned
 - items.datelastborrowed
 - items.datelastseen
 - items.timestamp
+
 
 - items.onloan
 - items.notforloan
