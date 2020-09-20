@@ -23,7 +23,7 @@ and I like to put that information in that order because we classify all of our 
 
 To further complicate answering these types of questions, some of the items people question me about are items that have been deleted.  We have cron jobs running on our system that mark any item that has been overdue as "Lost" after it is 45 days overdue, another cron that deletes any "Lost" items after they have been "Lost" for more than 13 months, and another cron that purges data from the deleteditems table 13 months after the item has been deleted.  It is not unusual for staff to find items in their bookdrops that are 16 months overdue.  When they check one of those items in, I sometimes get the "When I check this in, Koha gives me a 'barcode not found' message.  What's up with that?" and when I say "It was probably deleted automatically" they often ask "Who deleted it?  When was it deleted?  Why was it deleted?  Was it lost when it was deleted?  Tell me more about this item."
 
-So, like any lazy person, I spent hours and hours trying to come up with a way to make my life easier.  This report is the end result of those hours and hours and hours of work.  I wanted a report that merely asked for a barcode number and would then give me the classification information for that item, tell me whether the item was still in the catalog or had been deleted in the previous 13 months, would tell me whether or not the bibliographic record was still in the catalog or had been deleted within the previous 13 months, would show me any notes on the item record, would show me it's total circ count, date added, date last borrowed, date last seen, and date last modified, plus show me whether or not the item was currently checked out (and, if so, when it was due), as well as any possible status that was set for the item - lost, damaged, withdrawn, and not for loan (and I wanted the descriptions, not just the numeric codes for lost, not for loan, etc.).  If the item was currently in transit, I wanted to know that to along with where it was being shipped from and where it was being shipped to and when it was shipped.  Then I wanted links to the most common repots I'm asked about when people ask me questions about items -- the current borrower (if it's checked out), the bibliographic record, the item record, and reports for the item's circulation, in transit and request history.  And, finally, I wanted something that could easily be copied and pasted into an e-mail.
+So, like any lazy person, I spent hours and hours trying to come up with a way to make my life easier.  This report is the end result of those hours and hours and hours of work.  I wanted to have a report that only asked for a barcode number and would then give me the classification information for that item, tell me whether the item was still in the catalog or had been deleted in the previous 13 months, would tell me whether or not the bibliographic record was still in the catalog or had been deleted within the previous 13 months, would show me any notes on the item record, would show me it's total circ count, date added, date last borrowed, date last seen, and date last modified, plus show me whether or not the item was currently checked out (and, if so, when it was due), as well as any possible status that was set for the item - lost, damaged, withdrawn, and not for loan (and I wanted the descriptions, not just the numeric codes for lost, not for loan, etc.).  If the item was currently in transit, I wanted to know that to along with where it was being shipped from and where it was being shipped to and when it was shipped.  Then I wanted links to the most common repots that I refer to when people have questions about items, plus the current borrower (if it's checked out), the bibliographic record, the item record, and reports for the item's circulation, in transit and request history.  And, finally, I wanted something that had data that could easily be copied and pasted into an e-mail.
 
 Yeah.  I wanted a lot.
 
@@ -241,6 +241,13 @@ GROUP BY
   deleteditems.itemnumber
 ~~~
 
+And these are some screenshots of results to this report
+
+![Current item in catalog](../images/0010.png){:class="img-responsive"}
+
+![Deleted item](/path/to/image.jpg){:class="img-responsive"}
+
+
 This report has it all:
 
 - Subqueries
@@ -254,3 +261,6 @@ This report has it all:
 - "Like" parameters with concatenation
 - HTML
 - If/then statements
+
+
+H
