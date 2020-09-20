@@ -159,7 +159,7 @@ FROM
   ) issuesi
     ON items.itemnumber = issuesi.itemnumber
 WHERE
-  items.barcode LIKE Concat("%", @brcd := <<Enter item barcode number>> COLLATE utf8mb4_unicode_ci, "%")
+  items.barcode LIKE Concat("%", @brcd := <<Enter barcode number>> COLLATE utf8mb4_unicode_ci, "%")
 GROUP BY
   items.itemnumber
 UNION
@@ -245,7 +245,7 @@ And these are some screenshots of results to this report
 
 ![Current item in catalog](../images/0010.png){:class="img-responsive"}
 
-![Deleted item](/path/to/image.jpg){:class="img-responsive"}
+![Deleted item](../images/0020.png){:class="img-responsive"}
 
 
 This report has it all:
