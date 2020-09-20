@@ -90,10 +90,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'CCODE'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) ccodes
     ON items.ccode = ccodes.authorised_value
   LEFT JOIN (
@@ -105,10 +101,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'NOT_LOAN'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) nfl
     ON items.notforloan = nfl.authorised_value
   LEFT JOIN (
@@ -120,10 +112,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'DAMAGED'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) damagedi
     ON items.damaged = damagedi.authorised_value
   LEFT JOIN (
@@ -135,10 +123,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'LOST'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) losti
     ON items.itemlost = losti.authorised_value
   LEFT JOIN (
@@ -150,10 +134,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'WITHDRAWN'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) withdrawni
     ON items.withdrawn = withdrawni.authorised_value
   LEFT JOIN (
@@ -167,12 +147,6 @@ FROM
       branchtransfers
     WHERE
       branchtransfers.datearrived IS NULL
-    GROUP BY
-      branchtransfers.itemnumber,
-      branchtransfers.frombranch,
-      branchtransfers.datesent,
-      branchtransfers.tobranch,
-      branchtransfers.datearrived
   ) transfersi
     ON items.itemnumber = transfersi.itemnumber
   LEFT JOIN (
@@ -222,10 +196,6 @@ FROM
       authorised_values
     WHERE
       authorised_values.category = 'CCODE'
-    GROUP BY
-      authorised_values.category,
-      authorised_values.authorised_value,
-      authorised_values.lib
   ) ccodes
     ON deleteditems.ccode = ccodes.authorised_value
   LEFT JOIN biblio
@@ -270,3 +240,17 @@ WHERE
 GROUP BY
   deleteditems.itemnumber
 ~~~
+
+This report has it all:
+
+- Subqueries
+- Unions
+- Coalesced values
+- Concatenation
+- Concatenation with a seperator
+- Left joins
+- Marc queries
+- Runtime variables
+- "Like" parameters with concatenation
+- HTML
+- If/then statements
