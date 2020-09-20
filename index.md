@@ -282,8 +282,7 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itype
 - ccode
 - itemcallnumber
-- barcode
-<br /><br />
+- barcode<br /><br />
 - issues
 - renewals
 <br /><br />
@@ -303,3 +302,5 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itemlost_on
 - withdrawn
 - withdrawn_on
+
+I also knew
