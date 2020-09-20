@@ -243,7 +243,11 @@ GROUP BY
 
 And these are some screenshots of results to this report
 
+__Item still in catalog__
+
 ![Current item in catalog](../images/0010.png){:class="img-responsive"}
+
+__Item deleted from catalog__
 
 ![Deleted item](../images/0020.png){:class="img-responsive"}
 
@@ -263,4 +267,4 @@ This report has it all:
 - If/then statements
 
 
-H
+Here is how I built it.
