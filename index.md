@@ -283,18 +283,18 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - ccode
 - itemcallnumber
 - barcode
-<br />
+<br /><br />
 - issues
 - renewals
-<br />
+<br /><br />
 - itemnotes
 - itemnotes_nonpublic
-<br />
+<br /><br />
 - dateaccessioned
 - datelastborrowed
 - datelastseen
 - timestamp
-<br />
+<br /><br />
 - onloan
 - notforloan
 - damaged
