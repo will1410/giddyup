@@ -1,5 +1,5 @@
 theme: jekyll-theme-hacker
-title: iddyup Do-Nut (AKA "This is SPECTACULAR sql nerdery right here")
+title: Giddyup Do-Nut (AKA "This is SPECTACULAR sql nerdery right here")
 description: How to write a Koha SQL report that links to other tables
 show_downloads: false
 permalink: /blog/:year/:month/:day/:title
