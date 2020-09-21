@@ -282,7 +282,8 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itype
 - ccode
 - itemcallnumber
-- barcode<br /><br />
+- barcode
+<br /><br />
 - issues
 - renewals
 <br /><br />
@@ -302,5 +303,67 @@ Like with any query on items, I started with a list of the fields I wanted to pu
 - itemlost_on
 - withdrawn
 - withdrawn_on
+<br /><br />
+- itemnumber
 
-I also knew
+I also knew, at the very least, the following from biblios
+
+- author
+- title
+<br /><br />
+- biblionumber
+
+And whenever I create a report that might be used to help staff look for materials on the shelf, I always throw in
+
+- biblio_metadata.metadata > 245$b
+- biblio_metadata.metadata > 245$p
+- biblio_metadata.metadata > 245$n
+
+I write reports about item data often enough that I have this report saved in a text file that I can plug in and start modifying when I need an item data report so I don't always have to start from scratch.
+
+~~~sql
+SELECT
+  biblio.biblionumber,
+  items.itemnumber,
+  items.homebranch,
+  items.holdingbranch,
+  items.location,
+  items.itype,
+  items.ccode,
+  biblio.author,
+  biblio.title,
+  ExtractValue(biblio_metadata.metadata, '//datafield[@tag="245"]/subfield[@code="b"]') AS B,
+  ExtractValue(biblio_metadata.metadata, '//datafield[@tag="245"]/subfield[@code="n"]') AS N,
+  ExtractValue(biblio_metadata.metadata, '//datafield[@tag="245"]/subfield[@code="p"]') AS P,
+  items.itemcallnumber,
+  items.barcode,
+  items.itemnotes,
+  items.itemnotes_nonpublic,
+  items.dateaccessioned,
+  items.datelastborrowed,
+  items.datelastseen,
+  items.timestamp,
+  items.issues,
+  items.renewals,
+  items.onloan,
+  items.notforloan,
+  items.damaged,
+  items.damaged_on,
+  items.itemlost,
+  items.itemlost_on,
+  items.withdrawn,
+  items.withdrawn_on
+FROM
+  items JOIN
+  biblio ON items.biblionumber = biblio.biblionumber JOIN
+  biblio_metadata ON biblio_metadata.biblionumber = biblio.biblionumber
+~~~
+
+And in this case, I knew that this would be a report for specific individual items, so I added
+
+~~~sql
+WHERE
+  items.barcode = <<Enter barcode number>>
+~~~
+
+so that I wouldn't be getting a list of every item in the entre catalog.
